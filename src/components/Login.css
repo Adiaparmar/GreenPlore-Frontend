@@ -1,0 +1,133 @@
+/* General container styling */
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f4f7;
+  }
+  
+  /* Centered login box */
+  .login-box {
+    background-color: #edf1f3;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Logo and brand name */
+  .logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .brand-name {
+    font-size: 22px;
+    color: #2b7a78;
+    margin-top: 10px;
+  }
+  
+  /* Subtext under the brand */
+  .subtext {
+    font-size: 14px;
+    color: #5f6368;
+    margin-bottom: 20px;
+  }
+  
+  /* Form styling */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+    border-color: #2b7a78;
+    outline: none;
+  }
+  
+  /* Button styling */
+  .login-btn {
+    background-color: #2b7a78;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .login-btn:hover {
+    background-color: #3aafa9;
+  }
+  
+  /* Footer links */
+  .footer-links {
+    margin-top: 20px;
+  }
+  
+  .forgot-password, .create-account {
+    font-size: 12px;
+    color: #2b7a78;
+    text-decoration: none;
+    display: block;
+    margin-top: 5px;
+  }
+  
+  .forgot-password:hover, .create-account:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 600px) {
+    .login-box {
+      padding: 20px;
+    }
+  
+    .brand-name {
+      font-size: 20px;
+    }
+  
+    .form-group input {
+      padding: 8px;
+    }
+  
+    .login-btn {
+      padding: 8px;
+      font-size: 15px;
+    }
+  }
+  

@@ -1,0 +1,103 @@
+/* General container styling */
+/* body{ */
+    /* margin-top:5rem; */
+/* } */
+.register-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f4f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Heading style */
+  .register-container h2 {
+    font-size: 24px;
+    color: #2b7a78;
+    margin-bottom: 20px;
+  }
+  
+  /* Form styling */
+  .register-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Form group container */
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  /* Label styling */
+  .form-group label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  /* Input fields styling */
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  
+  /* Input hover/focus effects */
+  .form-group input:focus {
+    border-color: #2b7a78;
+    outline: none;
+  }
+  
+  /* Button styling */
+  .register-btn {
+    background-color: #2b7a78;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Button hover effect */
+  .register-btn:hover {
+    background-color: #3aafa9;
+  }
+  
+  /* Success message styling (if needed for further frontend work) */
+  .success-message {
+    color: #2b7a78;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  /* Responsive styling for smaller devices */
+  @media (max-width: 600px) {
+    .register-container {
+      padding: 15px;
+    }
+  
+    .register-container h2 {
+      font-size: 20px;
+    }
+  
+    .form-group input {
+      padding: 8px;
+      font-size: 13px;
+    }
+  
+    .register-btn {
+      padding: 8px;
+      font-size: 15px;
+    }
+  }
+  
