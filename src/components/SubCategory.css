@@ -1,0 +1,73 @@
+.subcategory-page {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    font-family: "Arial", sans-serif;
+    height:auto;
+  }
+  
+  .sub-category-navigation {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    gap: 1rem;
+  }
+  
+  .nav-button {
+    padding: 0.5rem 1rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-button:hover,
+  .nav-button.active {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .subcategory-content {
+    /* margin-top: 6rem; */
+    margin: 7rem auto;
+    /* margin-left: 15%; */
+    width: 70%;
+  }
+  
+  .subcategory-item-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .subcategory-item {
+    flex: 1 1 45%;
+    padding: 1rem;
+    background-color: #eaeaea;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .see-more-button {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.7rem 1.5rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .see-more-button:hover {
+    background-color: #388e3c;
+  }
+  

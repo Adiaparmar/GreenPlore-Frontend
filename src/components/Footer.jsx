@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   FaFacebook,
   FaTwitter,
@@ -9,6 +10,8 @@ import {
 import cart from "../images/cart.png";
 
 function Footer() {
+  const navigate = useNavigate();
+
   return (
     <footer className="bg-[#1d1f1e] text-white py-8">
       <div className="container mx-auto flex flex-col items-center">
@@ -35,13 +38,7 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="hover:text-green-600 transition  opacity-75  text-xs md:text-sm duration-600 hover:opacity-50"
-                >
-                  Register as a Seller
-                </a>
-              </li>
+                <a className="hover:text-green-600 transition  opacity-75  text-xs md:text-sm duration-600 hover:opacity-50" onClick={() => {navigate("/register-seller") }}>Register as a Seller</a></li>
               <li>
                 <a
                   href="#"
@@ -59,8 +56,7 @@ function Footer() {
             <ul className="mt-2 space-y-2">
               <li>
                 <a
-                  href="#"
-                  className="hover:text-green-300 transition  opacity-75  text-xs md:text-sm duration-600 hover:opacity-50"
+                  className="hover:text-green-300 transition  opacity-75  text-xs md:text-sm duration-600 hover:opacity-50" onClick={() => {navigate("/Privacy_Policy") }}
                 >
                   Privacy Policy
                 </a>
@@ -115,7 +111,7 @@ function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-green-300 transition  opacity-75  text-xs md:text-sm duration-600 hover:opacity-50"
+                  className="hover:text-green-300 transition  opacity-75  text-xs md:text-sm duration-600 hover:opacity-50" onClick={() => navigate("/wishlist")}
                 >
                   Wishlist
                 </a>
@@ -210,10 +206,7 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="hover:text-green-600 transition duration-600 hover:opacity-50"
-                >
+                <a className="hover:text-green-600 transition duration-600 hover:opacity-50" onClick={() => navigate("/register-seller")}>
                   Register as a Seller
                 </a>
               </li>
@@ -235,7 +228,7 @@ function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-green-300 transition duration-600 hover:opacity-50"
+                  className="hover:text-green-300 transition duration-600 hover:opacity-50" onClick={() => navigate("/privacy-policy")}
                 >
                   Privacy Policy
                 </a>
@@ -251,7 +244,7 @@ function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-green-300 transition duration-600 hover:opacity-50"
+                  className="hover:text-green-300 transition duration-600 hover:opacity-50" onClick={() => navigate("/ReturnAndRefundPolicy")}
                 >
                   Return and Refund Policy
                 </a>
@@ -267,7 +260,7 @@ function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-green-300 transition duration-600 hover:opacity-50"
+                  className="hover:text-green-300 transition duration-600 hover:opacity-50"onClick={() => navigate("/terms-and-conditions")}
                 >
                   Terms and Conditions
                 </a>
@@ -288,10 +281,7 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="hover:text-green-300 transition duration-600 hover:opacity-50"
-                >
+                <a className="hover:text-green-600 transition duration-600 hover:opacity-50" onClick={() => navigate("/wishlist")}>
                   Wishlist
                 </a>
               </li>
@@ -342,7 +332,7 @@ function Footer() {
               <FaInstagram className="w-6 h-6" />
             </a>
             <a
-              href="#"
+              href="https://in.linkedin.com/company/greenplore"
               className="text-gray-500 hover:text-green-300 transition duration-600"
             >
               <FaLinkedin className="w-6 h-6" />

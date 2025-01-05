@@ -1,4 +1,10 @@
 import Gifts from "../images/Gifts.png";
+// import axios from "axios";
+// import { useState } from "react";
+import { fetchDataFromApi } from "./Utils/api";
+// import { Carousel } from "react-bootstrap";
+// import { fetchDataFromApi } from './Utils/api';
+import { useEffect, useState } from "react";
 
 // Array containing gift information
 const gifts = [
@@ -9,6 +15,23 @@ const gifts = [
 ];
 
 function Gifting() {
+
+  const [productData, setProductData] = useState([]);
+
+  useEffect(() => {
+    fetchDataFromApi(`/api/products`)
+      .then((res) => {
+        console.log(res.products); 
+        setProductData(res.products);
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+      });
+  }, []); 
+
+  // if (!productData || productData.length === 0) {
+  //   return <div>Loading...</div>; // Show a loading state while fetching data
+  // }
   return (
     <div>
       {/* Heading for the section */}

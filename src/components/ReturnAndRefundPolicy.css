@@ -1,0 +1,65 @@
+.policy-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: auto;
+  }
+  
+  .policy-header {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #255640; /* Matches the theme */
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Jacques Francois", serif;
+  }
+  
+  .policy-container h2 {
+    font-size: 1.5rem;
+    color: #2d6a4f; /* Accent green color */
+    margin-top: 20px;
+    font-family: "Jacques Francois", serif;
+  }
+  
+  .policy-container p {
+    font-size: 1rem;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .policy-container ul {
+    margin-left: 20px;
+    list-style-type: disc;
+  }
+  
+  .policy-container ul li,
+  .policy-container ol li {
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .policy-container ol {
+    margin-left: 20px;
+    list-style-type: decimal;
+  }
+  
+  .policy-container strong {
+    color: #1d3557; /* Slightly darker accent */
+  }
+  
+  .policy-container a {
+    color: #2d6a4f;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+  
+  .policy-container a:hover {
+    color: #1b4332;
+  }
+  

@@ -140,6 +140,7 @@
 // export default Navbar2;
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   AiOutlineUser,
   AiOutlineShoppingCart,
@@ -153,6 +154,9 @@ import logo from "../../images/logo.png";
 
 function Navbar2() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Navigation hook
+  const navigate = useNavigate();
 
   // Toggle the mobile menu
   const toggleMenu = () => {
@@ -178,12 +182,12 @@ function Navbar2() {
           </button>
           <a
             href="#"
-            className="flex items-center h-[10vh] w-[30vw] md:h-[10vh] md:w-[16vw]"
+            className="flex items-center h-[15vh] w-[40vw] md:h-[15vh] md:w-[20vw]"
           >
             <img
               src={logo}
               alt="GreenPlore Logo"
-              className="mt-2 md:mt-6 w-full h-full object-contain"
+              className="mt-3 md:mt-14 w-full h-full object-contain"
             />
           </a>
         </div>
@@ -203,15 +207,15 @@ function Navbar2() {
         {/* Icons */}
         <div className="flex items-center space-x-2 md:space-x-4">
           <button className="p-2">
-            <AiOutlineUser className="w-5 h-5 md:w-6 md:h-6 hover:scale-110 hover:text-[#2D6A4F] transition-transform text-gray-800" />
+            <AiOutlineUser className="w-5 h-5 md:w-6 md:h-6 hover:scale-110 hover:text-[#2D6A4F] transition-transform text-gray-800" onClick={() => navigate("/register-buyer")} />
           </button>
           <button className="p-2">
             <AiOutlineShoppingCart className="w-5 h-5 md:w-6 md:h-6 hover:scale-110 hover:text-[#2D6A4F] transition-transform text-gray-800" />
           </button>
           <button className="p-2">
-            <AiOutlineHeart className="w-5 h-5 md:w-6 md:h-6 hover:text-red-700 hover:scale-110 transition-transform text-gray-800" />
+            <AiOutlineHeart className="w-5 h-5 md:w-6 md:h-6 hover:text-red-700 hover:scale-110 transition-transform text-gray-800"onClick={() => navigate("/wishlist")} />
           </button>
-          <button className="hidden md:block bg-[#52B788] hover:scale-110 transition-transform text-white px-4 py-2 rounded-full">
+          <button className="hidden md:block bg-[#52B788] hover:scale-110 transition-transform text-white px-4 py-2 rounded-full" onClick={() => navigate("/register-seller")}>
             Become a Seller
           </button>
         </div>
@@ -256,12 +260,22 @@ function Navbar2() {
             <AiOutlineHeart className="w-6 h-6 text-gray-800" />
             <span>Wishlist</span>
           </button>
+          {/* <button
+            className="bg-[#52B788] text-white px-4 py-2 rounded-full w-full text-center"
+            onClick={() => setMenuOpen(false); navigate("/register-seller");}
+          >
+            Become a Seller
+          </button> */}
           <button
             className="bg-[#52B788] text-white px-4 py-2 rounded-full w-full text-center"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => {
+              setMenuOpen(false);
+              navigate("/register-seller");
+            }}
           >
             Become a Seller
           </button>
+
         </div>
       </div>
     </nav>
