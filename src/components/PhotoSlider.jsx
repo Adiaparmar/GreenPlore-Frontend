@@ -1,174 +1,161 @@
 import { useState } from "react";
 
+// Importing images for categories
+import HC1 from "../images/Category Images/Handicraft/HC 1.jpeg";
+import HC2 from "../images/Category Images/Handicraft/HC 2.jpeg";
+import HC3 from "../images/Category Images/Handicraft/HC 3.jpeg";
+import HC4 from "../images/Category Images/Handicraft/HC 4.jpeg";
+import HC5 from "../images/Category Images/Handicraft/HC 5.jpeg";
+import HC6 from "../images/Category Images/Handicraft/HC 6.jpeg";
+
+import HD1 from "../images/Category Images/Home Decor/HD 1.jpeg";
+import HD2 from "../images/Category Images/Home Decor/HD 2.jpeg";
+import HD3 from "../images/Category Images/Home Decor/HD 3.jpeg";
+import HD4 from "../images/Category Images/Home Decor/HD 4.jpeg";
+import HD5 from "../images/Category Images/Home Decor/HD 5.jpeg";
+import HD6 from "../images/Category Images/Home Decor/HD 6.jpeg";
+
+import IP1 from "../images/Category Images/Indoor Plant/IP 1.jpeg";
+import IP2 from "../images/Category Images/Indoor Plant/IP 2.jpeg";
+import IP3 from "../images/Category Images/Indoor Plant/IP 3.jpeg";
+import IP4 from "../images/Category Images/Indoor Plant/IP 4.jpeg";
+import IP5 from "../images/Category Images/Indoor Plant/IP 5.jpeg";
+import IP6 from "../images/Category Images/Indoor Plant/IP 6.png";
+
+import PC1 from "../images/Category Images/Personal Care/PC 1.jpeg";
+import PC2 from "../images/Category Images/Personal Care/PC 2.jpeg";
+import PC3 from "../images/Category Images/Personal Care/PC 3.jpeg";
+import PC4 from "../images/Category Images/Personal Care/PC 4.jpeg";
+import PC5 from "../images/Category Images/Personal Care/PC 5.jpeg";
+import PC6 from "../images/Category Images/Personal Care/PC 6.jpeg";
+
+import SC1 from "../images/Category Images/Soap and Cosmetics/soap 1.jpeg";
+import SC2 from "../images/Category Images/Soap and Cosmetics/soap 2.jpeg";
+import SC3 from "../images/Category Images/Soap and Cosmetics/soap 3.jpeg";
+import SC4 from "../images/Category Images/Soap and Cosmetics/soap 4.jpeg";
+import SC5 from "../images/Category Images/Soap and Cosmetics/soap 5.jpeg";
+import SC6 from "../images/Category Images/Soap and Cosmetics/soap 6.jpeg";
+
+// Array containing categories and their images
 const slides = [
-  { top: "#C2D2CA", bottom: "#F5F9F7", text: "Slide 1 Text" },
-  { top: "#E5A0A0", bottom: "#FFE7E7", text: "Slide 2 Text" },
-  { top: "#C2D2CA", bottom: "#F5F9F7", text: "Slide 3 Text" },
-  { top: "#E5A0A0", bottom: "#FFE7E7", text: "Slide 4 Text" },
-  { top: "#C2D2CA", bottom: "#F5F9F7", text: "Slide 5 Text" },
-  { top: "#E5A0A0", bottom: "#FFE7E7", text: "Slide 6 Text" },
+  {
+    text: "Handicrafts",
+    images: [HC2, HC1, HC3, HC4, HC5, HC6],
+  },
+  {
+    text: "Home Decore",
+    images: [HD1, HD2, HD3, HD4, HD5, HD6],
+  },
+  {
+    text: "Indoor Plants",
+    images: [IP1, IP2, IP3, IP4, IP5, IP6],
+  },
+  {
+    text: "Personal Care",
+    images: [PC1, PC2, PC3, PC4, PC5, PC6],
+  },
+  {
+    text: "Soap and Cosmetics",
+    images: [SC1, SC2, SC3, SC4, SC5, SC6],
+  },
 ];
 
-const PhotoSliderMobile = ({ headerText = "Current favourites!" }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const slidesToShow = 2;
-  const totalSlides = slides.length;
+// "Trending" row images (one from each category)
+const trendingImages = [
+  slides[0].images[0], // First image from Handicrafts
+  slides[1].images[0], // First image from Home Decor
+  slides[2].images[0], // First image from Indoor Plants
+  slides[3].images[0], // First image from Personal Care
+  slides[4].images[0], // First image from Soap and Cosmetics
+];
 
-  const nextSlide = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex + 1) % (totalSlides - slidesToShow + 1)
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + (totalSlides - slidesToShow + 1)) %
-        (totalSlides - slidesToShow + 1)
-    );
-  };
-
+const PhotoSliderWeb = () => {
   return (
     <div className="relative w-full max-w-full mx-auto overflow-hidden bg-[#EDF1F1]">
-      <div
-        className="text-3xl py-4 pl-1 flex justify-center text-[#255640]"
-        style={{ fontFamily: "Jacques Francois, serif" }}
-      >
-        {headerText}
-      </div>
-      <div
-        className="flex transition-transform duration-500"
-        style={{
-          transform: `translateX(-${currentIndex * (100 / slidesToShow)}%)`,
-        }}
-      >
-        {slides.map((slide, index) => (
+      {/* Displaying images row by row */}
+      <div className="space-y-8">
+        {/* Trending Row */}
+        <div>
           <div
-            key={index}
-            className="flex-none px-2"
-            style={{ minWidth: "50%" }}
+            className="text-5xl p-4 flex justify-center text-[#255640]"
+            style={{
+              fontFamily: "Jacques Francois, serif",
+              fontSize: "3rem",
+            }}
           >
-            <div className="h-80 relative hover:scale-105 transition-transform duration-300 cursor-pointer">
+            Trending
+          </div>
+          <div className="grid grid-cols-5 gap-5 center">
+            {trendingImages.map((image, index) => (
               <div
-                className="h-3/4"
-                style={{ backgroundColor: slide.top }}
-              ></div>
-              <div
-                className="h-1/4"
-                style={{ backgroundColor: slide.bottom }}
-              ></div>
-              <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                <p className="text-white text-2xl font-semibold">
-                  {slide.text}
-                </p>
+                key={index}
+                className="h-96 relative hover:scale-105 transition-transform duration-300 cursor-pointer"
+              >
+                <div
+                  className="h-3/4"
+                  style={{ backgroundColor: "#C2D2CA" }}
+                >
+                  <img
+                    src={image}
+                    alt={`trending-image-${index}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  className="h-1/4"
+                  style={{ backgroundColor: "#F5F9F7" }}
+                ></div>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Original rows from the slides array */}
+        {slides.map((slide, slideIndex) => (
+          <div key={slideIndex}>
+            <div
+              className="text-5xl p-4 flex justify-center text-[#255640]"
+              style={{
+                fontFamily: "Jacques Francois, serif",
+                fontSize: "3rem",
+              }}
+            >
+              {slide.text} {/* Displaying slide text as the header */}
+            </div>
+            <div className="grid grid-cols-6 gap-5 center">
+              {slide.images.map((image, imageIndex) => (
+                <div
+                  key={imageIndex}
+                  className="h-96 relative hover:scale-105 transition-transform duration-300 cursor-pointer"
+                >
+                  <div
+                    className="h-3/4"
+                    style={{ backgroundColor: "#C2D2CA" }}
+                  >
+                    <img
+                      src={image}
+                      alt={`slide-${slideIndex}-image-${imageIndex}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div
+                    className="h-1/4"
+                    style={{ backgroundColor: "#F5F9F7" }}
+                  ></div>
+                </div>
+              ))}
             </div>
           </div>
         ))}
       </div>
-
-      <button
-        className="absolute top-3/4 left-0 transform -translate-y-1/2 px-4 py-2 text-gray-700 rounded-r text-2xl"
-        onClick={prevSlide}
-      >
-        &#10094;
-      </button>
-      <button
-        className="absolute top-3/4 right-0 transform -translate-y-1/2 px-4 py-2 text-gray-700 rounded-l text-2xl"
-        onClick={nextSlide}
-      >
-        &#10095;
-      </button>
-    </div>
-  );
-};
-
-const PhotoSliderWeb = ({ headerText = "Current favourites!" }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const slidesToShow = 5;
-  const totalSlides = slides.length;
-
-  const nextSlide = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex + 1) % (totalSlides - slidesToShow + 1)
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + (totalSlides - slidesToShow + 1)) %
-        (totalSlides - slidesToShow + 1)
-    );
-  };
-
-  return (
-    <div className="relative w-full max-w-full mx-auto overflow-hidden bg-[#EDF1F1]">
-      <div
-        className="text-5xl p-4 flex justify-center text-[#255640]"
-        style={{ fontFamily: "Jacques Francois, serif", fontSize: "3rem" }}
-      >
-        {headerText}
-      </div>
-      <div
-        className="flex transition-transform duration-500"
-        style={{
-          transform: `translateX(-${currentIndex * (100 / slidesToShow)}%)`,
-        }}
-      >
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className="w-1/5 flex-none px-2"
-            style={{ minWidth: "20%" }}
-          >
-            <div className="h-96 relative hover:scale-105 transition-transform duration-300 cursor-pointer">
-              <div
-                className="h-3/4"
-                style={{ backgroundColor: slide.top }}
-              ></div>
-              <div
-                className="h-1/4"
-                style={{ backgroundColor: slide.bottom }}
-              ></div>
-              <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                <p className="text-white text-2xl font-semibold">
-                  {slide.text}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <button
-        className="absolute top-3/4 left-0 transform -translate-y-1/2 px-4 py-2 text-gray-700 rounded-r text-2xl"
-        onClick={prevSlide}
-      >
-        &#10094;
-      </button>
-      <button
-        className="absolute top-3/4 right-0 transform -translate-y-1/2 px-4 py-2 text-gray-700 rounded-l text-2xl"
-        onClick={nextSlide}
-      >
-        &#10095;
-      </button>
     </div>
   );
 };
 
 const PhotoSlider = () => {
   return (
-    <div>
-      {/* Hidden on medium and larger screens (md:hidden) */}
-      <div className="md:hidden">
-        <PhotoSliderMobile />
-      </div>
-
-      {/* Hidden on small screens (sm:hidden) */}
-      <div className="hidden md:block">
-        <PhotoSliderWeb />
-      </div>
+    <div className="mt-6 mb-6">
+      <PhotoSliderWeb />
     </div>
   );
 };

@@ -1,35 +1,35 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./RegisterSeller.css";
+import "./RegisterSeller.css"; // Keeping the same CSS file for now
 
-const RegisterSeller = () => {
-  const [sellerData, setSellerData] = useState({
+const RegisterBuyer = () => {
+  // Initial state for buyer data
+  const [buyerData, setBuyerData] = useState({
     name: "",
     email: "",
+    phone: "",
     password: "",
     confirmPassword: "",
-    phone: "",
-    gstNumber: "",
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({}); // State for validation errors
   const navigate = useNavigate();
 
   // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setSellerData({
-      ...sellerData,
+    setBuyerData({
+      ...buyerData,
       [name]: value,
     });
 
-    // Validate password dynamically
+    // Dynamically validate password
     if (name === "password") {
       validatePassword(value);
     }
   };
 
-  // Validate password with standard criteria
+  // Password validation logic
   const validatePassword = (password) => {
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
@@ -50,111 +50,104 @@ const RegisterSeller = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Check if passwords match
-    if (sellerData.password !== sellerData.confirmPassword) {
+    // Ensure passwords match
+    if (buyerData.password !== buyerData.confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
 
-    // Ensure there are no validation errors
+    // Ensure no validation errors exist
     if (Object.keys(errors).length > 0) {
       alert("Please fix the errors before submitting.");
       return;
     }
 
-    // Perform registration logic here (e.g., API call)
-    console.log("Registered Seller:", sellerData);
+    // Simulate registration logic here (API call)
+    console.log("Registered Buyer:", buyerData);
 
     alert("Registration successful!");
-    navigate("/address"); // Redirect to AddressForm page
+    navigate("/home"); // Redirect to the buyer's home page or appropriate route
   };
 
   return (
-    <div className="register-container">
+    <div className="register-container my-5">
       <form className="register-form" onSubmit={handleSubmit}>
-        <h2>Register as Seller</h2>
+        <h2>Register as Buyer</h2>
 
+        {/* Name field */}
         <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
             type="text"
             id="name"
             name="name"
-            value={sellerData.name}
+            value={buyerData.name}
             onChange={handleChange}
-            placeholder="Enter your name"
+            placeholder="Enter your full name"
             required
           />
         </div>
 
+        {/* Email field */}
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
             name="email"
-            value={sellerData.email}
+            value={buyerData.email}
             onChange={handleChange}
-            placeholder="Enter your email"
+            placeholder="Enter your email address"
             required
           />
         </div>
 
+        {/* Phone Number field */}
         <div className="form-group">
           <label htmlFor="phone">Phone Number</label>
           <input
             type="tel"
             id="phone"
             name="phone"
-            value={sellerData.phone}
+            value={buyerData.phone}
             onChange={handleChange}
             pattern="[0-9]{10}"
-            placeholder="Enter 10-digit phone number"
+            placeholder="Enter your 10-digit phone number"
             required
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="gstNumber">GST Number</label>
-          <input
-            type="text"
-            id="gstNumber"
-            name="gstNumber"
-            value={sellerData.gstNumber}
-            onChange={handleChange}
-            placeholder="Enter your GST number"
-            required
-          />
-        </div>
-
+        {/* Password field */}
         <div className="form-group">
           <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
             name="password"
-            value={sellerData.password}
+            value={buyerData.password}
             onChange={handleChange}
-            placeholder="Enter your password"
+            placeholder="Create a strong password"
             required
           />
           {errors.password && <p className="error">{errors.password}</p>}
         </div>
 
+        {/* Confirm Password field */}
         <div className="form-group">
           <label htmlFor="confirmPassword">Confirm Password</label>
           <input
             type="password"
             id="confirmPassword"
             name="confirmPassword"
-            value={sellerData.confirmPassword}
+            value={buyerData.confirmPassword}
             onChange={handleChange}
             placeholder="Confirm your password"
             required
           />
         </div>
 
-        <button type="submit" className="register-btn">
+        {/* Submit Button */}
+        <button type="submit" className="register-btn my-1">
           Register
         </button>
       </form>
@@ -162,4 +155,4 @@ const RegisterSeller = () => {
   );
 };
 
-export default RegisterSeller;
+export default RegisterBuyer;

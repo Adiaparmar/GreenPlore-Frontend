@@ -1,6 +1,18 @@
 import { Carousel } from "react-bootstrap";
 import tubeplanters from "../images/tubeplanters.png";
+import { fetchDataFromApi } from './Utils/api';
 import leaf from "../images/leaf.png";
+import { useEffect } from "react";
+import { useState } from "react";
+
+// const [productData,setProductData] = useState([]);
+
+// useEffect(() =>{
+//   fetchDataFromApi(`/api/products`).then((res)=>{
+//     console.log(res.products)
+//     // setProductData(res.products)
+//   })
+// })
 
 function MobileImageSlider() {
   return (

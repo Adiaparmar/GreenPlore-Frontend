@@ -75,9 +75,10 @@ const BankDetailsForm = () => {
                     required
                 />
 
-                <button type="submit" className="bank-details-form-button">
+                <button type="submit" className="bank-details-form-button" >
                     Submit Bank Details
                 </button>
+                onClick={() => navigate("/#")}
             </form>
             <button
                 style={{

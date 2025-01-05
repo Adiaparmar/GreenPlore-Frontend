@@ -85,7 +85,7 @@ const AddressForm = () => {
                     required
                 />
 
-                <button type="submit" className="address-form-button">
+                <button type="submit" className="address-form-button" onClick={() => navigate("/bank-details")}>
                     Ship to this Address
                 </button>
             </form>

@@ -4,19 +4,23 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "react-scripts start",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "framer-motion": "^11.3.28",
+    "lucide-react": "^0.469.0",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
     "react-router-dom": "^6.26.1",
+    "react-scripts": "^5.0.1",
     "react-slick": "^0.30.2",
     "react-swiper": "^0.1.5",
     "slick-carousel": "^1.8.1",
@@ -36,5 +40,17 @@
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.9",
     "vite": "^5.4.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
