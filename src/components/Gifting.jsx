@@ -14,20 +14,18 @@ const gifts = [
   { id: 4, name: "Gift4" }, // Updated gift name
 ];
 
-function Gifting() {
-
-  const [productData, setProductData] = useState([]);
+const Gifting = () => {
+  const [gifting, setGifting] = useState([]);
 
   useEffect(() => {
-    fetchDataFromApi(`/api/products`)
-      .then((res) => {
-        console.log(res.products); 
-        setProductData(res.products);
-      })
-      .catch((error) => {
-        console.error("Error fetching products:", error);
-      });
-  }, []); 
+    const fetchGifting = async () => {
+      const data = await fetchDataFromApi("/api/products"); // Fetch wishlist
+      console.log(data);
+      setGifting(data);
+    }
+
+    fetchGifting();
+  }, []);
 
   // if (!productData || productData.length === 0) {
   //   return <div>Loading...</div>; // Show a loading state while fetching data

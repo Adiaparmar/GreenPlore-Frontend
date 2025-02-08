@@ -62,11 +62,14 @@ const RegisterBuyer = () => {
       return;
     }
 
-    // Simulate registration logic here (API call)
-    console.log("Registered Buyer:", buyerData);
+    // Store buyer data in localStorage (excluding password for security reasons)
+    const { password, confirmPassword, ...buyerDataToStore } = buyerData;
+    localStorage.setItem("buyerData", JSON.stringify(buyerDataToStore));
 
+    console.log("Registered Buyer:", buyerDataToStore);
     alert("Registration successful!");
-    navigate("/home"); // Redirect to the buyer's home page or appropriate route
+
+    navigate("/home"); // Redirect to buyer's homepage
   };
 
   return (

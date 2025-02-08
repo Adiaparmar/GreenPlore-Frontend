@@ -10,26 +10,24 @@ import Upcat from "./components/HeroCategories.jsx";
 import WebCat from "./components/WebCat.jsx";
 import RegisterSeller from "./components/RegisterSeller.jsx";
 import AddressForm from "./components/AddressForm.jsx";
-import BankDetails from "./components/Bank_Details.jsx";
+import BankDetails from "./components/Bank_Details.jsx"; // FIXED IMPORT
 import RegisterBuyer from "./components/RegisterBuyer.jsx";
 import Wishlist from "./components/Wishlist.jsx";
 import SubCategory from "./components/SubCategory.jsx";
-import Privacy_Policy from "./components/Privacy_Policy.jsx";
+import PrivacyPolicy from "./components/Privacy_Policy.jsx"; // FIXED IMPORT
 import TermsAndConditions from "./components/TermsAndConditions.jsx";
-import ReturnAndRefundPolicy from "./components/ReturnAndRefundPolicy.jsx"
-
+import ReturnAndRefundPolicy from "./components/ReturnAndRefundPolicy.jsx"; // FIXED IMPORT
 
 function App() {
   return (
     <Router>
-      {/* <SubCategory /> */}
-      <div className="w-full h-screen bg-[#EDF1F1]" style={{ height: "auto" }}>
+      <div className="w-full bg-[#EDF1F1]" style={{ height: "auto" }}>
         {/* Static components */}
         <Navbar1 />
         <Navbar2 />
 
         <Routes>
-          {/* Routes for navigation */}
+          {/* Home Page */}
           <Route
             path="/"
             element={
@@ -38,12 +36,6 @@ function App() {
                 <Hero />
                 <WebCat />
                 <PhotoSlider headerText="Trending" />
-                {/* <PhotoSlider headerText="Category 1" /> */}
-                {/* <PhotoSlider headerText="Category 2" /> */}
-                {/* // <PhotoSlider headerText="Category 3" /> */}
-                {/* // <PhotoSlider headerText="Category 4" /> */}
-                {/* // <PhotoSlider headerText="Category 5" /> */}
-                {/* // <PhotoSlider headerText="More categories!" /> */}
                 <Marquee />
                 <Gifting />
                 <Footer />
@@ -57,9 +49,12 @@ function App() {
           <Route path="/register-buyer" element={<RegisterBuyer />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/subcategory" element={<SubCategory />} />
-          <Route path="/privacy-policy" element={<Privacy_Policy />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-          <Route path="/ReturnAndRefundPolicy" element={<ReturnAndRefundPolicy />} />
+          <Route path="/return-and-refund-policy" element={<ReturnAndRefundPolicy />} />
+
+          {/* Catch-all Route for 404 */}
+          <Route path="*" element={<h1>404 - Page Not Found</h1>} />
         </Routes>
       </div>
     </Router>

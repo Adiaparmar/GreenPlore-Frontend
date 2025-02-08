@@ -1,24 +1,36 @@
-import React, { useState } from 'react';
-import './Login.css';
+import React, { useState } from "react";
+import "./Login.css";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState(localStorage.getItem("email") || "");
+  const [password, setPassword] = useState(
+    localStorage.getItem("password") || ""
+  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submit logic here
-    console.log('Email:', email, 'Password:', password);
+
+    // Store login credentials in localStorage
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+
+    console.log("Stored Credentials - Email:", email, "Password:", password);
   };
 
   return (
     <div className="login-container">
       <div className="login-box">
         <div className="logo-section">
-          <img src="your-logo-url-here" alt="GreenPlore Logo" className="logo" />
+          <img
+            src="your-logo-url-here"
+            alt="GreenPlore Logo"
+            className="logo"
+          />
           <h2 className="brand-name">GreenPlore</h2>
         </div>
-        <p className="subtext">Get access to your Orders, Wishlist, and Recommendations</p>
+        <p className="subtext">
+          Get access to your Orders, Wishlist, and Recommendations
+        </p>
         <form className="login-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="email">Email ID</label>
@@ -40,11 +52,17 @@ const Login = () => {
               required
             />
           </div>
-          <button type="submit" className="login-btn">SIGN IN</button>
+          <button type="submit" className="login-btn">
+            SIGN IN
+          </button>
         </form>
         <div className="footer-links">
-          <a href="#" className="forgot-password">Forget your password?</a>
-          <a href="#" className="create-account">Create account</a>
+          <a href="#" className="forgot-password">
+            Forget your password?
+          </a>
+          <a href="#" className="create-account">
+            Create account
+          </a>
         </div>
       </div>
     </div>
