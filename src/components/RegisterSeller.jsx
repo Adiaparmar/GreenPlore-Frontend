@@ -62,10 +62,13 @@ const RegisterSeller = () => {
       return;
     }
 
-    // Perform registration logic here (e.g., API call)
-    console.log("Registered Seller:", sellerData);
+    // Store seller data in localStorage (excluding password for security reasons)
+    const { password, confirmPassword, ...sellerDataToStore } = sellerData;
+    localStorage.setItem("sellerData", JSON.stringify(sellerDataToStore));
 
+    console.log("Registered Seller:", sellerData);
     alert("Registration successful!");
+
     navigate("/address"); // Redirect to AddressForm page
   };
 
