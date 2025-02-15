@@ -66,10 +66,13 @@ const RegisterSeller = () => {
     const { password, confirmPassword, ...sellerDataToStore } = sellerData;
     localStorage.setItem("sellerData", JSON.stringify(sellerDataToStore));
 
-    console.log("Registered Seller:", sellerData);
-    alert("Registration successful!");
+    // Retrieve data from localStorage to verify it's stored correctly
+    const savedData = JSON.parse(localStorage.getItem("sellerData"));
+    console.log("Stored Seller Data in Local Storage:", savedData);
 
-    navigate("/address"); // Redirect to AddressForm page
+    // alert("Registration successful!");
+
+    navigate("/bank-details"); // Redirect to AddressForm page
   };
 
   return (

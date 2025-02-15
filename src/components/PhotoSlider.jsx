@@ -157,12 +157,17 @@
 // export default PhotoSlider;
 
 // import { useState } from "react";
-
 import React, { useEffect, useState } from "react";
 import { fetchDataFromApi } from "./Utils/api";
+import { useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const PhotoSlider = () => {
+  const navigate = useNavigate(); // <-- Correct placement inside the component
+  const handleClick = () => {
+    navigate(`/product/${product._id}`);
+  };
+
   const [categories, setCategories] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -170,10 +175,8 @@ const PhotoSlider = () => {
     const fetchApi = async () => {
       try {
         const response = await fetchDataFromApi("/api/products");
-        // console.log("API Response:", response);
 
         const products = response?.products || [];
-        // console.log("Extracted Products:", products);
 
         if (Array.isArray(products)) {
           const processedCategories = {};
@@ -187,7 +190,7 @@ const PhotoSlider = () => {
             }
 
             const productData = {
-              name: product.name,
+              name: product.name.split(" ").slice(0, 6).join(" "), // Limiting name to 10 words
               images: product.images || [],
             };
 
@@ -257,13 +260,14 @@ const PhotoSlider = () => {
                 >
                   <FaArrowLeft size={24} />
                 </button>
-                <div className="flex gap-5 mx-auto transition-transform duration-500 ease-in-out overflow-hidden">
+                <div className="flex gap-4 mx-auto transition-transform duration-500 ease-in-out overflow-hidden">
                   {items.map((item, itemIndex) => (
                     <div
                       key={itemIndex}
-                      className="h-[580px] w-[390px] flex-shrink-0 relative hover:scale-105 transition-transform duration-300 cursor-pointer"
+                      className="h-[330px] w-[220px] flex-shrink-0 relative hover:scale-105 transition-transform duration-300 cursor-pointer"
+                      onClick={() => navigate("/product-details")} // <-- Navigation works now
                     >
-                      <div className="h-4/5 bg-gray-300">
+                      <div className="h-4/4 bg-gray-300 center">
                         {item.images.length > 0 ? (
                           <img
                             src={`http://localhost:4000/uploads/${item.images[0]}`}

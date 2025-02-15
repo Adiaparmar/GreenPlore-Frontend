@@ -165,10 +165,10 @@ function Navbar2() {
   };
 
   return (
-    <nav className="bg-[#EDF1F1] border-zinc-400 shadow-md relative">
+    <nav className="bg-[#EDF1F1] border-zinc-400 shadow-md relative h-20">
       <div className="container mx-auto flex justify-between items-center py-0 px-1 md:px-4 md:py-2">
         {/* Logo */}
-        <div className="flex items-center">
+        <div className="flex items-center -mt-3">
           <button
             className="md:hidden p-2"
             onClick={toggleMenu}
@@ -187,7 +187,7 @@ function Navbar2() {
             <img
               src={logo}
               alt="GreenPlore Logo"
-              className="mt-3 md:mt-14 w-full h-full object-contain"
+              className="mt-4 md:mt-14 w-full h-full object-contain"
             />
           </a>
         </div>
@@ -197,7 +197,7 @@ function Navbar2() {
           <input
             type="text"
             placeholder="Search for..."
-            className="w-full p-2 border border-gray-400 rounded-md outline-none focus:ring focus:ring-green-300"
+            className="w-100 p-2 border border-gray-400 rounded-md outline-none focus:ring focus:ring-green-300"
           />
           <button className="ml-2 p-2 group hover:bg-[#52B788] transition-transform rounded-full flex items-center justify-center h-10 w-10">
             <AiOutlineSearch className="w-5 h-5 group-hover:text-white" />
@@ -207,15 +207,24 @@ function Navbar2() {
         {/* Icons */}
         <div className="flex items-center space-x-2 md:space-x-4">
           <button className="p-2">
-            <AiOutlineUser className="w-5 h-5 md:w-6 md:h-6 hover:scale-110 hover:text-[#2D6A4F] transition-transform text-gray-800" onClick={() => navigate("/register-buyer")} />
+            <AiOutlineUser
+              className="w-5 h-5 md:w-6 md:h-6 hover:scale-110 hover:text-[#2D6A4F] transition-transform text-gray-800"
+              onClick={() => navigate("/register-buyer")}
+            />
           </button>
           <button className="p-2">
             <AiOutlineShoppingCart className="w-5 h-5 md:w-6 md:h-6 hover:scale-110 hover:text-[#2D6A4F] transition-transform text-gray-800" />
           </button>
           <button className="p-2">
-            <AiOutlineHeart className="w-5 h-5 md:w-6 md:h-6 hover:text-red-700 hover:scale-110 transition-transform text-gray-800"onClick={() => navigate("/wishlist")} />
+            <AiOutlineHeart
+              className="w-5 h-5 md:w-6 md:h-6 hover:text-red-700 hover:scale-110 transition-transform text-gray-800"
+              onClick={() => navigate("/wishlist")}
+            />
           </button>
-          <button className="hidden md:block bg-[#52B788] hover:scale-110 transition-transform text-white px-4 py-2 rounded-full" onClick={() => navigate("/register-seller")}>
+          <button
+            className="hidden md:block bg-[#52B788] hover:scale-110 transition-transform text-white px-4 py-2 rounded-full"
+            onClick={() => navigate("/register-seller")}
+          >
             Become a Seller
           </button>
         </div>
@@ -275,7 +284,6 @@ function Navbar2() {
           >
             Become a Seller
           </button>
-
         </div>
       </div>
     </nav>

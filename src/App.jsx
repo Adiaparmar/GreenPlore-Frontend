@@ -10,13 +10,14 @@ import Upcat from "./components/HeroCategories.jsx";
 import WebCat from "./components/WebCat.jsx";
 import RegisterSeller from "./components/RegisterSeller.jsx";
 import AddressForm from "./components/AddressForm.jsx";
-import BankDetails from "./components/Bank_Details.jsx"; // FIXED IMPORT
+import BankDetails from "./components/Bank_Details.jsx";
 import RegisterBuyer from "./components/RegisterBuyer.jsx";
 import Wishlist from "./components/Wishlist.jsx";
 import SubCategory from "./components/SubCategory.jsx";
-import PrivacyPolicy from "./components/Privacy_Policy.jsx"; // FIXED IMPORT
+import PrivacyPolicy from "./components/Privacy_Policy.jsx";
 import TermsAndConditions from "./components/TermsAndConditions.jsx";
-import ReturnAndRefundPolicy from "./components/ReturnAndRefundPolicy.jsx"; // FIXED IMPORT
+import ReturnAndRefundPolicy from "./components/ReturnAndRefundPolicy.jsx";
+import ProductDetails from "./components/ProductDetails.jsx";
 
 function App() {
   return (
@@ -50,11 +51,27 @@ function App() {
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/subcategory" element={<SubCategory />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-          <Route path="/return-and-refund-policy" element={<ReturnAndRefundPolicy />} />
+          <Route
+            path="/terms-and-conditions"
+            element={<TermsAndConditions />}
+          />
+          <Route
+            path="/return-and-refund-policy"
+            element={<ReturnAndRefundPolicy />}
+          />
+
+          {/* ✅ Fixed ProductDetails Route */}
+          <Route path="/product/:id" element={<ProductDetails />} />
 
           {/* Catch-all Route for 404 */}
-          <Route path="*" element={<h1>404 - Page Not Found</h1>} />
+          <Route
+            path="*"
+            element={
+              <h1 className="text-center text-2xl font-bold">
+                404 - Page Not Found
+              </h1>
+            }
+          />
         </Routes>
       </div>
     </Router>

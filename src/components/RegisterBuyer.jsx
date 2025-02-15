@@ -69,7 +69,7 @@ const RegisterBuyer = () => {
     console.log("Registered Buyer:", buyerDataToStore);
     alert("Registration successful!");
 
-    navigate("/home"); // Redirect to buyer's homepage
+    navigate("/"); // Redirect to buyer's homepage
   };
 
   return (
