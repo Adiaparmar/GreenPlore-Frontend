@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Bank_Details.css"; // Importing the CSS file
+import "./Bank_Details.css";
 
 const BankDetailsForm = () => {
   const [formData, setFormData] = useState({
@@ -22,8 +22,13 @@ const BankDetailsForm = () => {
     // Store bank details in localStorage
     localStorage.setItem("bankDetails", JSON.stringify(formData));
 
-    console.log("Stored Bank Details:", formData);
-    navigate("/next-page"); // Navigate to the next page
+    // Log data from localStorage to verify it's stored correctly
+    console.log(
+      "Stored Bank Details in Local Storage:",
+      JSON.parse(localStorage.getItem("bankDetails"))
+    );
+
+    navigate("/address-form"); // Navigate to the next page
   };
 
   const handleBack = () => {
@@ -83,21 +88,7 @@ const BankDetailsForm = () => {
         </button>
       </form>
 
-      <button
-        style={{
-          marginTop: "20px",
-          padding: "10px 15px",
-          backgroundColor: "black",
-          color: "white",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
-          transition: "background-color 0.3s",
-        }}
-        onClick={handleBack}
-      >
-        Back
-      </button>
+      <button onClick={handleBack}>Back</button>
     </div>
   );
 };

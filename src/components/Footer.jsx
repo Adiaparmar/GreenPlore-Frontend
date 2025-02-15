@@ -31,14 +31,26 @@ function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
-                  className="hover:text-green-600 transition  opacity-75  text-xs md:text-sm duration-600 hover:opacity-50"
+                  href="https://forms.gle/ee79A8PexkcYUnCB9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-green-600 transition opacity-75 text-xs md:text-sm duration-600 hover:opacity-50"
+                  onClick={(e) => e.stopPropagation()} // Prevent parent event interference
                 >
                   Bulk & Corporate Req
                 </a>
               </li>
+
               <li>
-                <a className="hover:text-green-600 transition  opacity-75  text-xs md:text-sm duration-600 hover:opacity-50" onClick={() => {navigate("/register-seller") }}>Register as a Seller</a></li>
+                <a
+                  className="hover:text-green-600 transition  opacity-75  text-xs md:text-sm duration-600 hover:opacity-50"
+                  onClick={() => {
+                    navigate("/register-seller");
+                  }}
+                >
+                  Register as a Seller
+                </a>
+              </li>
               <li>
                 <a
                   href="#"
@@ -56,7 +68,10 @@ function Footer() {
             <ul className="mt-2 space-y-2">
               <li>
                 <a
-                  className="hover:text-green-300 transition  opacity-75  text-xs md:text-sm duration-600 hover:opacity-50" onClick={() => {navigate("/Privacy_Policy") }}
+                  className="hover:text-green-300 transition  opacity-75  text-xs md:text-sm duration-600 hover:opacity-50"
+                  onClick={() => {
+                    navigate("/Privacy_Policy");
+                  }}
                 >
                   Privacy Policy
                 </a>
@@ -111,7 +126,8 @@ function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-green-300 transition  opacity-75  text-xs md:text-sm duration-600 hover:opacity-50" onClick={() => navigate("/wishlist")}
+                  className="hover:text-green-300 transition  opacity-75  text-xs md:text-sm duration-600 hover:opacity-50"
+                  onClick={() => navigate("/wishlist")}
                 >
                   Wishlist
                 </a>
@@ -206,7 +222,10 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a className="hover:text-green-600 transition duration-600 hover:opacity-50" onClick={() => navigate("/register-seller")}>
+                <a
+                  className="hover:text-green-600 transition duration-600 hover:opacity-50 cursor-pointer"
+                  onClick={() => navigate("/register-seller")}
+                >
                   Register as a Seller
                 </a>
               </li>
@@ -228,7 +247,8 @@ function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-green-300 transition duration-600 hover:opacity-50" onClick={() => navigate("/privacy-policy")}
+                  className="hover:text-green-300 transition duration-600 hover:opacity-50"
+                  onClick={() => navigate("/privacy-policy")}
                 >
                   Privacy Policy
                 </a>
@@ -244,7 +264,8 @@ function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-green-300 transition duration-600 hover:opacity-50" onClick={() => navigate("/ReturnAndRefundPolicy")}
+                  className="hover:text-green-300 transition duration-600 hover:opacity-50"
+                  onClick={() => navigate("/return-and-refund-policy")}
                 >
                   Return and Refund Policy
                 </a>
@@ -260,7 +281,8 @@ function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-green-300 transition duration-600 hover:opacity-50"onClick={() => navigate("/terms-and-conditions")}
+                  className="hover:text-green-300 transition duration-600 hover:opacity-50"
+                  onClick={() => navigate("/terms-and-conditions")}
                 >
                   Terms and Conditions
                 </a>
@@ -281,7 +303,10 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a className="hover:text-green-600 transition duration-600 hover:opacity-50" onClick={() => navigate("/wishlist")}>
+                <a
+                  className="hover:text-green-600 transition duration-600 hover:opacity-50 cursor-pointer"
+                  onClick={() => navigate("/wishlist")}
+                >
                   Wishlist
                 </a>
               </li>
@@ -290,7 +315,7 @@ function Footer() {
 
           {/* Company Info */}
           <div>
-            <h2 className="font-bold text-lg">Company Info</h2>
+            <h2 className="font-bold text-base">Company Info</h2>
             <ul className="mt-2 space-y-2">
               <li>
                 <a
@@ -333,10 +358,13 @@ function Footer() {
             </a>
             <a
               href="https://in.linkedin.com/company/greenplore"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-500 hover:text-green-300 transition duration-600"
             >
               <FaLinkedin className="w-6 h-6" />
             </a>
+
             <a
               href="#"
               className="text-gray-500 hover:text-green-300 transition duration-600"

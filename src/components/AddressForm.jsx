@@ -26,7 +26,11 @@ const AddressForm = () => {
     localStorage.setItem("addressData", JSON.stringify(formData));
 
     console.log("Stored Address:", formData);
-    navigate("/bank-details"); // Navigate to the next page
+
+    // Show success alert
+    alert("Registration Successful");
+
+    navigate("/"); // Navigate to the next page
   };
 
   const handleBack = () => {

@@ -90,7 +90,7 @@ const UpperCategory = () => {
   };
 
   return (
-    <div className="w-full border-b border-zinc-400 " >
+    <div className="w-full border-b border-zinc-400 ">
       <div className="flex justify-center items-center h-[11vh] mt-5 overflow-x-hidden ">
         <ul className="flex items-center pl-4 overflow-x-hidden">
           {Menu.map((category) => (
@@ -132,11 +132,11 @@ const UpperCategory = () => {
                 }`}
                 onMouseEnter={() => handleMouseEnter(category.id)}
                 onMouseLeave={() => handleMouseLeave(category.id)}
-                onClick={() => navigate("/subcategory")}>
+                onClick={() => navigate("/subcategory")}
+              >
                 {category.subcategories.map((subcategory) => (
                   <li key={subcategory.id}>
-                    <a className="block px-4 py-2 hover:bg-[#d9dfdf] hover:text-[#204b38] transition-colors duration-200 "
-                      >
+                    <a className="block px-4 py-2 hover:bg-[#d9dfdf] hover:text-[#204b38] transition-colors duration-200 ">
                       {subcategory.name}
                     </a>
                   </li>

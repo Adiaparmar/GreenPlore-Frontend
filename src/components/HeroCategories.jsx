@@ -187,7 +187,7 @@ const UpperCategory = () => {
   return (
     <div className="w-full border-b border-zinc-400">
       <div className="flex justify-center items-center h-[9vh]">
-        <ul className="flex items-center gap-9">
+        <ul className="flex items-center gap-0 text-align center mt-3">
           {Menu2.map((category) => (
             <li
               key={category.id}

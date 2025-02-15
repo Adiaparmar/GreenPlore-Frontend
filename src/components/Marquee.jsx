@@ -47,7 +47,7 @@ const Marquee = () => {
 };
 
 const Header = ({ title }) => (
-  <div className="flex flex-col justify-center items-center  bg-[#EDF1F1] pt-4 pb-4 ">
+  <div className="flex flex-col justify-center items-center  bg-[#EDF1F1] pt-4 pb-4 -mb-[10px]">
     <h1
       className="text-3xl md:hidden flex flex-col justify-center items-center bg-[#EDF1F1] pt-4 pb-4 text-[#1b4130]"
       style={{ fontFamily: "Jacques Francois, serif" }}
@@ -55,7 +55,7 @@ const Header = ({ title }) => (
       {title}
     </h1>
     <h1
-      className=" md:block hidden md:text-7xl flex flex-col justify-center items-center bg-[#EDF1F1] pt-4 pb-4 text-[#1b4130]"
+      className=" md:block hidden md:text-7xl flex flex-col justify-center items-center bg-[#EDF1F1] pt-4 pb-4 text-[#1b4130] -mb-[13px]"
       style={{
         fontFamily: "Jacques Francois, serif",
         fontSize: "50px",
@@ -68,8 +68,8 @@ const Header = ({ title }) => (
 );
 
 const MarqueeContainer = ({ children }) => (
-  <div className="w-full py-10 bg-[#1b4130] h-[15vh] md:h-[18vh] overflow-hidden">
-    <div className="h-[10vh] md:h-[13vh] flex whitespace-nowrap relative">
+  <div className="w-full py-10 bg-[#1b4130] h-[15vh] md:h-[18vh] overflow-hidden align-items center">
+    <div className="h-[10vh] md:h-[13vh] flex whitespace-nowrap relative align-items center -mt-[7px]">
       {children}
     </div>
   </div>
@@ -94,7 +94,7 @@ const MarqueeContent = ({ images }) => (
 
 const MarqueeImage = ({ src, alt }) => (
   <img
-    className="mx-5 w-[80px] h-[70px] md:w-[100px] md:h-[100px] -my-4"
+    className="mx-5 w-[80px] h-[70px] md:w-[80px] md:h-[80px] -my-4"
     src={src}
     alt={alt}
   />
