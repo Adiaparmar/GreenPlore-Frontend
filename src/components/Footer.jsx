@@ -24,7 +24,8 @@ function Footer() {
               <li>
                 <a
                   href="#"
-                  className="hover:text-green-600 transition opacity-75 text-xs md:text-sm duration-600 hover:opacity-50"
+                  className="hover:text-green-600 transition-opacity opacity-75 text-xs md:text-sm duration-500 hover:opacity-50 no-underline"
+                  style={{ textDecoration: "none", color: "black" }}
                 >
                   FAQs
                 </a>
@@ -36,8 +37,9 @@ function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-green-600 transition opacity-75 text-xs md:text-sm duration-600 hover:opacity-50"
                   onClick={(e) => e.stopPropagation()} // Prevent parent event interference
+                  style={{ textDecoration: "none", color: "black" }}
                 >
-                  Bulk & Corporate Req
+                  Your Link Text
                 </a>
               </li>
 
@@ -47,6 +49,7 @@ function Footer() {
                   onClick={() => {
                     navigate("/register-seller");
                   }}
+                  style={{ textDecoration: "none", color: "black" }}
                 >
                   Register as a Seller
                 </a>
