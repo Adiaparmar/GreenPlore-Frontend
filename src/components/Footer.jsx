@@ -30,18 +30,23 @@ function Footer() {
                   FAQs
                 </a>
               </li>
-              <li>
-                <a
-                  href="https://forms.gle/ee79A8PexkcYUnCB9"
-                  target="_blank"
-                  rel="noopener noreferrer"
+              {/* <li>
+                <button
+                  onClick={() =>
+                    window.open("https://forms.gle/ee79A8PexkcYUnCB9", "_blank")
+                  }
                   className="hover:text-green-600 transition opacity-75 text-xs md:text-sm duration-600 hover:opacity-50"
-                  onClick={(e) => e.stopPropagation()} // Prevent parent event interference
-                  style={{ textDecoration: "none", color: "black" }}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    textDecoration: "none",
+                    color: "black",
+                    cursor: "pointer",
+                  }}
                 >
-                  Your Link Text
-                </a>
-              </li>
+                  Bulk & Corporate Req
+                </button>
+              </li> */}
 
               <li>
                 <a
@@ -206,27 +211,70 @@ function Footer() {
         <div className="grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-7xl flex justify-evenly hidden sm:flex">
           {/* Get to Know Us */}
           <div>
-            <h2 className="font-bold text-lg">Get to Know Us</h2>
+            <h2 className="font-bold text-lg" style={{ color: "green" }}>
+              Get to Know Us
+            </h2>
             <ul className="mt-2 space-y-2">
               <li>
                 <a
                   href="#"
                   className="hover:text-green-600 transition duration-600 hover:opacity-50"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    textDecoration: "none",
+                    color: "White",
+                    cursor: "pointer",
+                  }}
                 >
                   FAQs
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="hover:text-green-600 transition duration-600 hover:opacity-50"
+                <button
+                  onClick={() =>
+                    window.open("https://forms.gle/ee79A8PexkcYUnCB9", "_blank")
+                  }
+                  className="hover:text-green-600 transition opacity-75 text-xs md:text-sm duration-600 hover:opacity-50"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    textDecoration: "none",
+                    color: "White",
+                    cursor: "pointer",
+                  }}
                 >
-                  Bulk & Corporate Request
-                </a>
+                  Bulk & Corporate Req
+                </button>
               </li>
+              <li>
+                <button
+                  onClick={() =>
+                    window.open("https://forms.gle/FzjdnznktYmVmHJF6", "_blank")
+                  }
+                  className="hover:text-green-600 transition opacity-75 text-xs md:text-sm duration-600 hover:opacity-50"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    textDecoration: "none",
+                    color: "White",
+                    cursor: "pointer",
+                  }}
+                >
+                  Affiliate Program
+                </button>
+              </li>
+
               <li>
                 <a
                   className="hover:text-green-600 transition duration-600 hover:opacity-50 cursor-pointer"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    textDecoration: "none",
+                    color: "White",
+                    cursor: "pointer",
+                  }}
                   onClick={() => navigate("/register-seller")}
                 >
                   Register as a Seller
@@ -236,6 +284,13 @@ function Footer() {
                 <a
                   href="#"
                   className="hover:text-green-600 transition duration-600 hover:opacity-50"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    textDecoration: "none",
+                    color: "White",
+                    cursor: "pointer",
+                  }}
                 >
                   Contact Us
                 </a>
@@ -245,13 +300,22 @@ function Footer() {
 
           {/* Policies */}
           <div>
-            <h2 className="font-bold text-lg">Policies</h2>
+            <h2 className="font-bold text-lg" style={{ color: "green" }}>
+              Policies
+            </h2>
             <ul className="mt-2 space-y-2">
               <li>
                 <a
                   href="#"
                   className="hover:text-green-300 transition duration-600 hover:opacity-50"
                   onClick={() => navigate("/privacy-policy")}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    textDecoration: "none",
+                    color: "White",
+                    cursor: "pointer",
+                  }}
                 >
                   Privacy Policy
                 </a>
@@ -260,6 +324,13 @@ function Footer() {
                 <a
                   href="#"
                   className="hover:text-green-300 transition duration-600 hover:opacity-50"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    textDecoration: "none",
+                    color: "White",
+                    cursor: "pointer",
+                  }}
                 >
                   Track My Order
                 </a>
@@ -269,6 +340,13 @@ function Footer() {
                   href="#"
                   className="hover:text-green-300 transition duration-600 hover:opacity-50"
                   onClick={() => navigate("/return-and-refund-policy")}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    textDecoration: "none",
+                    color: "White",
+                    cursor: "pointer",
+                  }}
                 >
                   Return and Refund Policy
                 </a>
@@ -277,6 +355,13 @@ function Footer() {
                 <a
                   href="#"
                   className="hover:text-green-300 transition duration-600 hover:opacity-50"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    textDecoration: "none",
+                    color: "White",
+                    cursor: "pointer",
+                  }}
                 >
                   Shipping Policy
                 </a>
@@ -286,6 +371,13 @@ function Footer() {
                   href="#"
                   className="hover:text-green-300 transition duration-600 hover:opacity-50"
                   onClick={() => navigate("/terms-and-conditions")}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    textDecoration: "none",
+                    color: "White",
+                    cursor: "pointer",
+                  }}
                 >
                   Terms and Conditions
                 </a>
@@ -295,12 +387,21 @@ function Footer() {
 
           {/* Support */}
           <div>
-            <h2 className="font-bold text-lg">Support</h2>
+            <h2 className="font-bold text-lg" style={{ color: "green" }}>
+              Support
+            </h2>
             <ul className="mt-2 space-y-2">
               <li>
                 <a
                   href="#"
                   className="hover:text-green-300 transition duration-600 hover:opacity-50"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    textDecoration: "none",
+                    color: "White",
+                    cursor: "pointer",
+                  }}
                 >
                   Get Customer Support
                 </a>
@@ -309,6 +410,13 @@ function Footer() {
                 <a
                   className="hover:text-green-600 transition duration-600 hover:opacity-50 cursor-pointer"
                   onClick={() => navigate("/wishlist")}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    textDecoration: "none",
+                    color: "White",
+                    cursor: "pointer",
+                  }}
                 >
                   Wishlist
                 </a>
@@ -318,12 +426,21 @@ function Footer() {
 
           {/* Company Info */}
           <div>
-            <h2 className="font-bold text-base">Company Info</h2>
+            <h2 className="font-bold text-base" style={{ color: "green" }}>
+              Company Info
+            </h2>
             <ul className="mt-2 space-y-2">
               <li>
                 <a
                   href="#"
                   className="hover:text-green-300 transition duration-600 hover:opacity-50"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    textDecoration: "none",
+                    color: "White",
+                    cursor: "pointer",
+                  }}
                 >
                   About Us
                 </a>
@@ -332,6 +449,13 @@ function Footer() {
                 <a
                   href="#"
                   className="hover:text-green-300 transition duration-600 hover:opacity-50"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    textDecoration: "none",
+                    color: "White",
+                    cursor: "pointer",
+                  }}
                 >
                   Careers
                 </a>

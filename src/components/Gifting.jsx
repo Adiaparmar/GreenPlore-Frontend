@@ -8,10 +8,10 @@ import { useEffect, useState } from "react";
 
 // Array containing gift information
 const gifts = [
-  { id: 1, name: "Gift1" },
-  { id: 2, name: "Gift2" },
-  { id: 3, name: "Gift3" },
-  { id: 4, name: "Gift4" }, // Updated gift name
+  { id: 1, name: "Corporate Gifting" },
+  { id: 2, name: "Occasion Based Gifting" },
+  { id: 3, name: "Event Gifting" },
+  { id: 4, name: "Personal Gifting" }, // Updated gift name
 ];
 
 const Gifting = () => {
@@ -22,7 +22,7 @@ const Gifting = () => {
       const data = await fetchDataFromApi("/api/products"); // Fetch wishlist
       console.log(data);
       setGifting(data);
-    }
+    };
 
     fetchGifting();
   }, []);
@@ -74,6 +74,6 @@ const Gifting = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Gifting;

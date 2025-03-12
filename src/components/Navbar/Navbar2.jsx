@@ -209,11 +209,14 @@ function Navbar2() {
           <button className="p-2">
             <AiOutlineUser
               className="w-5 h-5 md:w-6 md:h-6 hover:scale-110 hover:text-[#2D6A4F] transition-transform text-gray-800"
-              onClick={() => navigate("/register-buyer")}
+              onClick={() => navigate("/login")}
             />
           </button>
           <button className="p-2">
-            <AiOutlineShoppingCart className="w-5 h-5 md:w-6 md:h-6 hover:scale-110 hover:text-[#2D6A4F] transition-transform text-gray-800" />
+            <AiOutlineShoppingCart
+              className="w-5 h-5 md:w-6 md:h-6 hover:scale-110 hover:text-[#2D6A4F] transition-transform text-gray-800"
+              onClick={() => navigate("/cartpage")}
+            />
           </button>
           <button className="p-2">
             <AiOutlineHeart
