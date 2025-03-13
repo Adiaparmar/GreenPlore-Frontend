@@ -1,27 +1,27 @@
 import { useState } from "react";
 import { IoIosArrowDropdown } from "react-icons/io";
-import bags from "../images/bags.jpg";
-import soaps from "../images/soaps.jpeg";
+// import bags from "../images/bags.jpg";
+// import soaps from "../images/soaps.jpeg";
 import kitchen from "../images/kitchen.jpeg";
 import indoorplanters from "../images/indoorplants.png";
 import decor from "../images/decor.png";
 import fashion from "../images/fashion.jpeg";
 import cosmetics from "../images/cosmetics.jpg";
 import candle from "../images/candle.jpeg";
-import cleaner from "../images/cleaner.jpeg";
+// import cleaner from "../images/cleaner.jpeg";
 import drink from "../images/drink.jpeg";
 
 // Small Screen Menu (Menu1)
 const Menu1 = [
   {
     id: 1,
-    name: "Kitchen & Tableware",
+    name: "Personal Care",
     link: "/#",
     image: kitchen,
   },
   {
     id: 2,
-    name: "Indoor Planters",
+    name: "Kitchen & Tableware",
     link: "/#",
     image: indoorplanters,
   },
@@ -33,59 +33,46 @@ const Menu1 = [
   },
   {
     id: 4,
-    name: "Sustainable Fashion",
+    name: "Eco Friendly Planters",
     link: "/#",
     image: fashion,
   },
   {
     id: 5,
-    name: "Natural Beverages",
+    name: "Sustainable Fashion",
     link: "/#",
     image: drink,
   },
   {
     id: 6,
-    name: "Cosmetics",
+    name: "Organic Foods and Beverages",
     link: "/#",
     image: cosmetics,
   },
   {
     id: 7,
-    name: "Candles",
+    name: "Others",
     link: "/#",
     image: candle,
-  },
-  {
-    id: 8,
-    name: "Biodegradable bags",
-    link: "/#",
-    image: bags,
-  },
-  {
-    id: 9,
-    name: "Cleaning agents",
-    link: "/#",
-    image: cleaner,
-  },
-  {
-    id: 10,
-    name: "Soaps",
-    link: "/#",
-    image: soaps,
   },
 ];
 
 // Medium Screen Menu (Menu2)
-const Menu2 = [
+export const Menu2 = [
   {
     id: 1,
-    name: "Soaps and Cosmetics",
+    name: "Personal Care",
     link: "/#",
     subcategories: [
-      { id: 1, name: "Natural Soaps", link: "/#" },
-      { id: 2, name: "Pure Personal Care", link: "/#" },
-      { id: 3, name: "Organic Beauty Products", link: "/#" },
-      { id: 4, name: "Natural Fragrances", link: "/#" },
+      { id: 1, name: "Natural Soaps", link: "/products/natural-soaps" },
+      { id: 2, name: "Skin Body Care", link: "/products/skin-body-care" },
+      {
+        id: 3,
+        name: "Organic Beauty Products",
+        link: "/products/organic-beauty-products",
+      },
+      { id: 4, name: "Face Care", link: "/products/face-care" },
+      { id: 5, name: "Oral Care", link: "/products/oral-care" },
     ],
   },
   {
@@ -93,49 +80,88 @@ const Menu2 = [
     name: "Kitchen & Tableware",
     link: "/#",
     subcategories: [
-      { id: 1, name: "Classic Tableware", link: "/#" },
-      { id: 2, name: "Kitchen Essentials", link: "/#" },
+      { id: 1, name: "Classic Tableware", link: "/products/classic-tableware" },
+      {
+        id: 2,
+        name: "Kitchen Essentials",
+        link: "/products/kitchen-essentials",
+      },
     ],
   },
   {
     id: 3,
-    name: "Indoor Planters",
-    link: "/#",
-    subcategories: [{ id: 1, name: "Hydroponic Planters", link: "/#" }],
-  },
-  {
-    id: 4,
     name: "Home Decor",
     link: "/#",
     subcategories: [
-      { id: 1, name: "Unique Handicrafts", link: "/#" },
-      { id: 2, name: "Bamboo and Wood Products", link: "/#" },
-      { id: 3, name: "Natural Aroma Candles", link: "/#" },
+      { id: 1, name: "Handicrafts", link: "/products/handicrafts" },
+      { id: 2, name: "Bamboo Products", link: "/products/bamboo-products" },
+      {
+        id: 3,
+        name: "Fragrances Candles",
+        link: "/products/fragrances-candles",
+      },
+      { id: 4, name: "Festive Decor", link: "/products/festive-decor" },
+    ],
+  },
+  {
+    id: 4,
+    name: "Eco Friendly Planters",
+    link: "/#",
+    subcategories: [
+      {
+        id: 1,
+        name: "Hydroponic Planters",
+        link: "/products/hydroponic-planters",
+      },
+      { id: 2, name: "Indoor Planters", link: "/products/indoor-planters" },
     ],
   },
   {
     id: 5,
     name: "Sustainable Fashion",
     link: "/#",
-    subcategories: [{ id: 1, name: "Eco-Friendly Bags", link: "/#" }],
+    subcategories: [
+      { id: 1, name: "Eco-Friendly Bags", link: "/products/eco-friendly-bags" },
+    ],
   },
   {
     id: 6,
     name: "Organic Foods and Beverages",
     link: "/#",
-    subcategories: [{ id: 1, name: "Natural Juices", link: "/#" }],
+    subcategories: [
+      { id: 1, name: "Natural Juices", link: "/products/natural-juices" },
+      { id: 2, name: "Resuable Bags", link: "/products/reusable-bags" },
+      { id: 3, name: "Travel Essentials", link: "/products/travel-essentials" },
+    ],
   },
   {
     id: 7,
     name: "Others",
     link: "/#",
     subcategories: [
-      { id: 1, name: "Liquid Cleaners", link: "/#" },
-      { id: 2, name: "Ayurvedic Remedies", link: "/#" },
-      { id: 3, name: "Organic Manure", link: "/#" },
+      { id: 1, name: "Home Care", link: "/products/home-care" },
+      {
+        id: 2,
+        name: "Eco Friendly Stationary",
+        link: "/products/eco-friendly-stationary",
+      },
+      { id: 3, name: "Food & Beverages", link: "/products/food-beverages" },
     ],
   },
 ];
+
+// Create a map of subcategory slug to parent category for easier lookup
+export const subcategoryToCategoryMap = {};
+Menu2.forEach((category) => {
+  category.subcategories.forEach((subcategory) => {
+    const subcategorySlug = subcategory.link.split("/").pop();
+    subcategoryToCategoryMap[subcategorySlug] = {
+      categoryId: category.id,
+      categoryName: category.name,
+      subcategories: category.subcategories,
+    };
+  });
+});
 
 // Small Screen Component (HeroCategories)
 function HeroCategories() {
@@ -201,6 +227,7 @@ const UpperCategory = () => {
                 aria-haspopup="true"
                 aria-expanded={openCategoryId === category.id}
                 aria-controls={`subcategory-menu-${category.id}`}
+                onClick={(e) => e.preventDefault()}
               >
                 {category.name}
                 <IoIosArrowDropdown
