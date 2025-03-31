@@ -130,7 +130,7 @@ const WebCat = () => {
     const fetchApi = async () => {
       try {
         const response = await fetchDataFromApi("/api/category");
-        console.log("API Response:", response);
+        // console.log("API Response:", response);
 
         if (
           response &&

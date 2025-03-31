@@ -226,7 +226,7 @@ function Navbar2() {
           </button>
           <button
             className="hidden md:block bg-[#52B788] hover:scale-110 transition-transform text-white px-4 py-2 rounded-full"
-            onClick={() => navigate("/register-seller")}
+            onClick={() => navigate("/seller-login")}
           >
             Become a Seller
           </button>
@@ -282,7 +282,7 @@ function Navbar2() {
             className="bg-[#52B788] text-white px-4 py-2 rounded-full w-full text-center"
             onClick={() => {
               setMenuOpen(false);
-              navigate("/register-seller");
+              navigate("/seller-login");
             }}
           >
             Become a Seller
