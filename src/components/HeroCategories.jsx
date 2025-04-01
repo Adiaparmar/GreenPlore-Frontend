@@ -43,12 +43,12 @@ const Menu1 = [
     link: "/#",
     image: drink,
   },
-  {
-    id: 6,
-    name: "Organic Foods and Beverages",
-    link: "/#",
-    image: cosmetics,
-  },
+  // {
+  //   id: 6,
+  //   name: "Organic Foods and Beverages",
+  //   link: "/#",
+  //   image: cosmetics,
+  // },
   {
     id: 7,
     name: "Others",
@@ -124,16 +124,16 @@ export const Menu2 = [
       { id: 1, name: "Eco-Friendly Bags", link: "/products/eco-friendly-bags" },
     ],
   },
-  {
-    id: 6,
-    name: "Organic Foods and Beverages",
-    link: "/#",
-    subcategories: [
-      { id: 1, name: "Natural Juices", link: "/products/natural-juices" },
-      { id: 2, name: "Resuable Bags", link: "/products/reusable-bags" },
-      { id: 3, name: "Travel Essentials", link: "/products/travel-essentials" },
-    ],
-  },
+  // {
+  //   id: 6,
+  //   name: "Organic Foods and Beverages",
+  //   link: "/#",
+  //   subcategories: [
+  //     { id: 1, name: "Natural Juices", link: "/products/natural-juices" },
+  //     { id: 2, name: "Resuable Bags", link: "/products/reusable-bags" },
+  //     { id: 3, name: "Travel Essentials", link: "/products/travel-essentials" },
+  //   ],
+  // },
   {
     id: 7,
     name: "Others",
@@ -146,6 +146,9 @@ export const Menu2 = [
         link: "/products/eco-friendly-stationary",
       },
       { id: 3, name: "Food & Beverages", link: "/products/food-beverages" },
+      { id: 4, name: "Natural Juices", link: "/products/natural-juices" },
+      { id: 5, name: "Resuable Bags", link: "/products/reusable-bags" },
+      { id: 6, name: "Travel Essentials", link: "/products/travel-essentials" },
     ],
   },
 ];
@@ -213,7 +216,7 @@ const UpperCategory = () => {
   return (
     <div className="w-full border-b border-zinc-400">
       <div className="flex justify-center items-center h-[9vh]">
-        <ul className="flex items-center gap-0 text-align center mt-3">
+        <ul className="flex items-center gap-8 text-align center mt-3">
           {Menu2.map((category) => (
             <li
               key={category.id}
@@ -223,7 +226,7 @@ const UpperCategory = () => {
             >
               <a
                 href={category.link}
-                className="text-md px-3 py-2 hover:text-primary duration-200 flex items-center font-semibold"
+                className="text-md px-3 py-2 hover:text-primary duration-200 flex items-center font-semibold text-green-700 no-underline"
                 aria-haspopup="true"
                 aria-expanded={openCategoryId === category.id}
                 aria-controls={`subcategory-menu-${category.id}`}
@@ -250,7 +253,7 @@ const UpperCategory = () => {
                   <li key={subcategory.id}>
                     <a
                       href={subcategory.link}
-                      className="block px-4 py-2 hover:bg-[#d9dfdf] hover:text-[#204b38] transition-colors duration-200"
+                      className="block px-4 py-2 hover:bg-[#d9dfdf] hover:text-[#204b38] transition-colors duration-200 text-white-700 no-underline text-md px-3 py-2 hover:text-primary duration-200 flex items-center font-semibold text-white-700 no-underline"
                     >
                       {subcategory.name}
                     </a>

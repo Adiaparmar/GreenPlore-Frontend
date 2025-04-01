@@ -23,6 +23,7 @@ import TermsAndConditions from "./components/TermsAndConditions.jsx";
 import ReturnAndRefundPolicy from "./components/ReturnAndRefundPolicy.jsx";
 import ProductDetails from "./components/ProductDetails.jsx";
 import CartPage from "./components/CartPage.jsx";
+import Seller_Login from "./components/Seller_Login.jsx";
 
 import { GoogleOAuthProvider } from "@react-oauth/google"; // Import GoogleOAuthProvider
 
@@ -64,6 +65,7 @@ function App() {
                 <Route path="/wishlist" element={<WishlistPage />} />
                 <Route path="/cartpage" element={<CartPage />} />
                 <Route path="/login" element={<LogIn />} />
+                <Route path="/seller-login" element={<Seller_Login />} />
                 {/* <Route path="/subcategory" element={<SubCategory />} /> */}
                 <Route
                   path="/products/:subcategoryId"
