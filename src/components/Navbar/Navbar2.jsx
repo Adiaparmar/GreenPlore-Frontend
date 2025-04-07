@@ -164,6 +164,12 @@ function Navbar2() {
     console.log("Menu Open:", !menuOpen); // For debugging
   };
 
+  // Function to navigate to the home page and close the menu
+  const goToHome = () => {
+    setMenuOpen(false);
+    navigate("/");
+  };
+
   return (
     <nav className="bg-[#EDF1F1] border-zinc-400 shadow-md relative h-20">
       <div className="container mx-auto flex justify-between items-center py-0 px-1 md:px-4 md:py-2">
@@ -245,6 +251,14 @@ function Navbar2() {
           menuOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out`}
       >
+        {/* Close Icon */}
+        <button
+          onClick={goToHome}
+          className="absolute top-10 right-10 p-2 text-gray-800 z-50"
+          aria-label="Close menu and go to home"
+        >
+          <AiOutlineClose className="w-6 h-6" />
+        </button>
         <div className="flex flex-col items-start p-4 space-y-4 mt-16">
           <input
             type="text"
@@ -253,31 +267,34 @@ function Navbar2() {
           />
           <button
             className="flex items-center space-x-2 w-full text-left"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => {
+              setMenuOpen(false);
+              navigate("/profile");
+            }}
           >
             <AiOutlineUser className="w-6 h-6 text-gray-800" />
             <span>Profile</span>
           </button>
           <button
             className="flex items-center space-x-2 w-full text-left"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => {
+              setMenuOpen(false);
+              navigate("/cartpage");
+            }}
           >
             <AiOutlineShoppingCart className="w-6 h-6 text-gray-800" />
             <span>Cart</span>
           </button>
           <button
             className="flex items-center space-x-2 w-full text-left"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => {
+              setMenuOpen(false);
+              navigate("/wishlist");
+            }}
           >
             <AiOutlineHeart className="w-6 h-6 text-gray-800" />
             <span>Wishlist</span>
           </button>
-          {/* <button
-            className="bg-[#52B788] text-white px-4 py-2 rounded-full w-full text-center"
-            onClick={() => setMenuOpen(false); navigate("/register-seller");}
-          >
-            Become a Seller
-          </button> */}
           <button
             className="bg-[#52B788] text-white px-4 py-2 rounded-full w-full text-center"
             onClick={() => {

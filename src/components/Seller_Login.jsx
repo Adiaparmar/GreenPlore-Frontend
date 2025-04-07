@@ -43,12 +43,12 @@ const Seller_Login = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-[#EDF1F1]">
       <div className="bg-white rounded-lg shadow-md p-8 w-full max-w-md">
-        <div className="flex flex-col items-center mb-6">
+        <div className="flex flex-col items-center -mb-10">
           <img src={logo} alt="GreenPlore Logo" />
           {/* <h2 className="text-2xl font-semibold text-gray-800">GreenPlore</h2> */}
         </div>
         <p className="text-center text-sm text-gray-600 mb-6 mt -4">
-          Log In to your supplier panel
+          Log In to your seller panel
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">

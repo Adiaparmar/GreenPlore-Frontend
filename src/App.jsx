@@ -50,7 +50,7 @@ function App() {
                       <Upcat />
                       <Hero />
                       <WebCat />
-                      <PhotoSlider headerText="Trending" />
+                      <PhotoSlider />
                       <Marquee />
                       <Gifting />
                       <Footer />
