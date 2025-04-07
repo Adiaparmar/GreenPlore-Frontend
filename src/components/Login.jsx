@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
+import logo from "../images/logo.png";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -42,15 +43,11 @@ const Login = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-[#EDF1F1]">
       <div className="bg-white rounded-lg shadow-md p-8 w-full max-w-md">
-        <div className="flex flex-col items-center mb-6">
-          <img
-            src="your-logo-url-here"
-            alt="GreenPlore Logo"
-            className="w-20 h-20 mb-2"
-          />
-          <h2 className="text-2xl font-semibold text-gray-800">GreenPlore</h2>
+        <div className="flex flex-col items-center -mb-11">
+          <img src={logo} alt="GreenPlore Logo" />
+          {/* <h2 className="text-2xl font-semibold text-gray-800">GreenPlore</h2> */}
         </div>
-        <p className="text-center text-sm text-gray-600 mb-6">
+        <p className="text-center text-sm text-gray-600 mb-10">
           Get access to your Orders, Wishlist, and Recommendations
         </p>
 

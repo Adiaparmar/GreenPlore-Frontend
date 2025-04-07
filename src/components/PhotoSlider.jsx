@@ -207,21 +207,13 @@ const PhotoSlider = () => {
             allProducts.push(productData);
           });
 
-          // Pick 6 random trending products
-          const trendingProducts = allProducts
-            .sort(() => 0.5 - Math.random())
-            .slice(0, 6);
-
           // Limit each category to max 6 products
           Object.keys(processedCategories).forEach((key) => {
             processedCategories[key] = processedCategories[key].slice(0, 6);
           });
 
-          // Ensure "Trending" is always included
-          setCategories({
-            Trending: trendingProducts,
-            ...processedCategories,
-          });
+          // Set the categories, excluding "Trending"
+          setCategories(processedCategories);
         }
       } catch (error) {
         console.error("Error fetching products:", error);
